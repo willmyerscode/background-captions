@@ -1,0 +1,117 @@
+/* =========
+  Background Captions
+  This Code is Licensed by Will-Myers.com
+========== */
+/**
+* Variables
+.wm-background-captions {
+  --border-radius: 10px;
+  --caption-color: white;
+  --caption-background: rgba(255,255,255, 0.4);
+  --caption-width: 40vw;
+  --caption-padding: 7px;
+  --icon-size: 20px;
+  --icon-color: white;
+  --font-size: 1em;
+  --right: 20px;
+  --bottom: 20px;
+  z-index: 9;
+
+}
+**/
+
+.wm-background-captions .caption {
+  color: var(--paragraphMediumColor);
+  padding: var(--caption-padding, 7px);
+  line-height: 1em;
+  font-size: var(--font-size, 1em);
+  text-align: right;
+  z-index: 9;
+}
+
+.wm-background-captions .caption svg, .wm-background-captions .caption-icon svg {
+  height: var(--icon-size, 20px);
+  width: var(--icon-size, 20px);
+  stroke: var(--paragraphMediumColor);
+  fill: var(--paragraphMediumColor);
+  z-index: 9;
+}
+  
+
+.wm-background-captions.caption-container {
+  bottom: var(--bottom, 20px);
+  right: var(--right, 20px);
+  position: absolute;
+  z-index: 9;
+}
+
+/** 
+* Inline Styles
+**/
+.wm-background-captions.style-inline .caption {
+  display: flex;
+}
+
+.wm-background-captions .inline-icon {
+  margin-right: 5px;
+}
+
+
+/**
+* Icon Style
+**/
+.wm-background-captions.style-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.wm-background-captions.style-icon .hide-caption {
+    display: none;
+}
+  
+.wm-background-captions.style-icon .caption {
+  bottom: calc(var(--bottom, 20px) + var(--icon-size, 20px) + 2px);
+  right: var(--right, 20px);
+  background: var(--tweak-text-block-background-color);
+  border-radius: var(--border-radius, 10px);
+  max-width: var(--caption-width, 40vw);
+  margin-bottom: 4px;
+  color: var(--tweak-paragraph-medium-color-on-background);
+}
+
+.wm-background-captions.style-icon .caption.show-caption {
+  display: block;
+}
+  
+.wm-background-captions.style-icon .caption-icon {
+  border: unset;
+  background: unset;
+  padding: 0px;
+}
+
+
+body:not(.sqs-edit-mode-active) .code-block [data-wm-plugin="background-captions"] {
+  display: none;
+}
+
+
+.sqs-edit-mode-active .code-block [data-wm-plugin="background-captions"] {
+  color: transparent;
+  background: transparent;
+  font-size: 0;
+  position: absolute;
+  line-height: 0;
+  width: 100%;
+  height: 25px;
+  border: 1px dashed var(--headingLargeColor);
+}
+
+.sqs-edit-mode-active .code-block [data-wm-plugin="background-captions"]::after {
+  content: 'Background Captions';
+  color: var(--headingLargeColor);
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  transform:translateX(25%);
+}
