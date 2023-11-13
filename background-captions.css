@@ -2,23 +2,6 @@
   Background Captions
   This Code is Licensed by Will-Myers.com
 ========== */
-/**
-* Variables
-.wm-background-captions {
-  --border-radius: 10px;
-  --caption-color: white;
-  --caption-background: rgba(255,255,255, 0.4);
-  --caption-width: 40vw;
-  --caption-padding: 7px;
-  --icon-size: 20px;
-  --icon-color: white;
-  --font-size: 1em;
-  --right: 20px;
-  --bottom: 20px;
-  z-index: 9;
-
-}
-**/
 
 .wm-background-captions .caption {
   color: var(--paragraphMediumColor);
