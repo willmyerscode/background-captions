@@ -114,6 +114,15 @@ class BackgroundCaptions {
         captionContainer.addEventListener("mouseleave", function () {
           captionTextElement.style.display = "";
         });
+
+        document.addEventListener('touchstart', function(e) {
+          if (e.target.closest('.caption-container') === captionContainer) {
+            captionTextElement.style.display = "block";
+          } else {
+            captionTextElement.style.display = "";
+          }
+        })
+
       } else if (style.includes("icon") && action.includes("click")) {
         captionContainer.addEventListener("click", function () {
           captionTextElement.classList.toggle("show-caption");
